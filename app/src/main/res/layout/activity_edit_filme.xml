@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/textViewNome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nome do Filme"
+        android:enabled="false" />
+
+    <EditText
+        android:id="@+id/editTextAnoLancamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ano de Lançamento" />
+
+    <EditText
+        android:id="@+id/editTextProdutora"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Produtora" />
+
+    <EditText
+        android:id="@+id/editTextDuracao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Duração (minutos)" />
+
+    <EditText
+        android:id="@+id/editTextNota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nota (0 a 10)" />
+
+    <Spinner
+        android:id="@+id/spinnerGenero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/buttonSalvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salvar"
+        android:layout_gravity="end" />
+
+</LinearLayout>
