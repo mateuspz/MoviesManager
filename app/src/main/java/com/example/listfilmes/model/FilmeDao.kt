@@ -9,17 +9,17 @@ import androidx.room.Update
 @Dao
 interface FilmeDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertFilme(filme: Filme)
+    suspend fun inserirFilme(filme: Filme)
 
     @Update
-    suspend fun updateFilme(filme: Filme)
+    suspend fun atualizarFilme(filme: Filme)
 
     @Query("SELECT * FROM filmes ORDER BY nome ASC")
-    suspend fun getAllFilmes(): List<Filme>
+    suspend fun obterTodosFilmes(): List<Filme>
 
     @Query("SELECT * FROM filmes WHERE id = :id LIMIT 1")
-    suspend fun getFilmeById(id: Int): Filme?
+    suspend fun obterFilmePorId(id: Int): Filme?
 
     @Query("DELETE FROM filmes WHERE id = :id")
-    suspend fun deleteFilme(id: Int)
+    suspend fun deletarFilme(id: Int)
 }

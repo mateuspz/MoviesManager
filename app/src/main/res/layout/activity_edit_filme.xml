@@ -42,6 +42,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp" />
 
+    <Switch
+        android:id="@+id/switchAssistido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Já assistido" />
+
     <Button
         android:id="@+id/buttonSalvar"
         android:layout_width="wrap_content"
