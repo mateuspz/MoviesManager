@@ -28,9 +28,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Configurando a Toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+        // Configurando o botão "Adicionar Filme"
         val buttonAdicionarFilme = findViewById<Button>(R.id.buttonAdicionarFilme)
         buttonAdicionarFilme.setOnClickListener {
             abrirAddEditFilmeActivity()
@@ -41,15 +43,26 @@ class MainActivity : AppCompatActivity() {
         recyclerView = findViewById(R.id.recyclerViewFilmes)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        // Inicializando o adapter apenas uma vez e associando à RecyclerView
+        filmeAdapter = FilmeAdapter(
+            filmes = listaFilmes,
+            onItemClick = { filme -> abrirDetalhesFilme(filme) },
+            onEditClick = { filme -> abrirAddEditFilmeActivity(filme) },
+            onDeleteClick = { filme -> excluirFilme(filme) }
+        )
+        recyclerView.adapter = filmeAdapter
+
+        // Carregando os filmes inicialmente
         carregarFilmes()
     }
+
 
     private fun carregarFilmes() {
         lifecycleScope.launch {
             try {
                 listaFilmes.clear()
                 listaFilmes.addAll(filmeController?.obterTodosFilmes() ?: emptyList())
-                atualizarAdapter()
+                filmeAdapter.notifyDataSetChanged()
             } catch (e: Exception) {
                 Toast.makeText(this@MainActivity, "Erro ao carregar filmes", Toast.LENGTH_SHORT).show()
             }

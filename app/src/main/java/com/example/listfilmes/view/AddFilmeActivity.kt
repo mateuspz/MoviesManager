@@ -64,7 +64,12 @@ class AddFilmeActivity : AppCompatActivity() {
                 salvarFilme()
             }
         }
+        val buttonVoltar = findViewById<Button>(R.id.buttonVoltar)
+        buttonVoltar.setOnClickListener {
+            finish()  // Fecha a Activity e volta para a tela anterior
+        }
     }
+
 
     private fun carregarDadosFilme(filme: Filme) {
         editTextNome.setText(filme.nome)
