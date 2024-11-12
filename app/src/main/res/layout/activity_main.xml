@@ -2,27 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp">
 
-    <Button
-        android:id="@+id/buttonAdicionarFilme"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/FireBrick"
+        app:title="Lista de Filmes"
+        app:titleTextColor="@android:color/white"
+        android:elevation="4dp" />
+
+    <TextView
+        android:id="@+id/textViewTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Adicionar Filme"
-        android:layout_gravity="end" />
+        android:text="Cadastre novos filmes"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp" />
 
-    <Spinner
-        android:id="@+id/spinnerOrdenar"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/buttonAdicionarFilme"
+        android:layout_width="219dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp" />
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/FireBrick"
+        android:text="Adicionar Filme" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewFilmes"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="8dp" />
+        android:layout_height="563dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1" />
 
 </LinearLayout>

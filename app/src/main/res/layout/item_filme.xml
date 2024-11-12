@@ -30,4 +30,20 @@
         android:layout_height="wrap_content"
         android:textSize="16sp" />
 
+    <Button
+        android:id="@+id/buttonEditarFilme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/FireBrick"
+        android:text="Editar" />
+
+    <Button
+        android:id="@+id/buttonExcluirFilme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/FireBrick"
+        android:text="Excluir" />
+
 </LinearLayout>

@@ -12,6 +12,11 @@ class FilmeController(context: Context) {
 
     private val filmeDao: FilmeDao = FilmeDatabase.getInstance(context).filmeDao()
 
+    fun nomeFilmeExiste(nome: String): Boolean {
+        val filmeExistente = filmeDao.getFilmePorNome(nome)
+        return filmeExistente != null
+    }
+
     // Função para adicionar um filme no banco de dados
     suspend fun adicionarFilme(filme: Filme) {
         withContext(Dispatchers.IO) {

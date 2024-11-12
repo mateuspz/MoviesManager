@@ -3,6 +3,7 @@ package com.example.listfilmes.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ListFilmes.R
@@ -12,7 +13,8 @@ import com.example.listfilmes.model.Filme
 class FilmeAdapter(
     private val filmes: List<Filme>,
     private val onItemClick: (Filme) -> Unit,
-    private val onItemLongClick: (Filme) -> Unit
+    private val onEditClick: (Filme) -> Unit,
+    private val onDeleteClick: (Filme) -> Unit
 ) : RecyclerView.Adapter<FilmeAdapter.FilmeViewHolder>() {
 
     // ViewHolder para os itens da lista de filmes
@@ -21,6 +23,8 @@ class FilmeAdapter(
         val textViewAnoLancamento: TextView = itemView.findViewById(R.id.textViewAnoLancamento)
         val textViewProdutora: TextView = itemView.findViewById(R.id.textViewProdutora)
         val textViewNota: TextView = itemView.findViewById(R.id.textViewNota)
+        val buttonEdit: Button = itemView.findViewById(R.id.buttonEditarFilme)
+        val buttonDelete: Button = itemView.findViewById(R.id.buttonExcluirFilme)
 
         fun bind(filme: Filme) {
             textViewNomeFilme.text = filme.nome
@@ -28,12 +32,11 @@ class FilmeAdapter(
             textViewProdutora.text = "Produtora: ${filme.produtora}"
             textViewNota.text = "Nota: ${filme.nota?.toString() ?: "N/A"}"
 
-            // Configura o clique curto e longo nos itens da lista
+            buttonEdit.setOnClickListener { onEditClick(filme) }
+            buttonDelete.setOnClickListener { onDeleteClick(filme) }
+
             itemView.setOnClickListener { onItemClick(filme) }
-            itemView.setOnLongClickListener {
-                onItemLongClick(filme)
-                true
-            }
+
         }
     }
 

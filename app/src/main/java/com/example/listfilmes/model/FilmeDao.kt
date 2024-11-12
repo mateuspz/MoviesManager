@@ -22,4 +22,8 @@ interface FilmeDao {
 
     @Query("DELETE FROM filmes WHERE id = :id")
     suspend fun deletarFilme(id: Int)
+
+    @Query("SELECT * FROM filmes WHERE nome = :nome LIMIT 1")
+    fun getFilmePorNome(nome: String): Filme?
+
 }

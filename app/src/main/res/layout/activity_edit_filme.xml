@@ -5,54 +5,78 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preencha os dados do filme"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp" />
+
     <EditText
         android:id="@+id/textViewNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:inputType="text"
         android:hint="Nome do Filme"
-        android:enabled="false" />
+    />
 
     <EditText
         android:id="@+id/editTextAnoLancamento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:inputType="number"
         android:hint="Ano de Lançamento" />
 
     <EditText
         android:id="@+id/editTextProdutora"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
         android:hint="Produtora" />
 
     <EditText
         android:id="@+id/editTextDuracao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:inputType="number"
         android:hint="Duração (minutos)" />
 
     <EditText
         android:id="@+id/editTextNota"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:inputType="numberDecimal"
         android:hint="Nota (0 a 10)" />
 
     <Spinner
         android:id="@+id/spinnerGenero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp" />
+        android:layout_marginTop="8dp"
+        android:minHeight="48dp" />
 
-    <Switch
+    <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switchAssistido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Já assistido" />
+        android:minHeight="48dp"
+        android:text="Já assistido. " />
 
     <Button
         android:id="@+id/buttonSalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/FireBrick"
+        android:layout_gravity="center_horizontal"
         android:text="Salvar"
-        android:layout_gravity="end" />
+        />
+
 
 </LinearLayout>
